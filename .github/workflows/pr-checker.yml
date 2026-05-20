@@ -1,0 +1,25 @@
+name: PR description checker
+on:
+  pull_request:
+    types: [opened, reopened, edited]
+jobs:
+  Check-PR-description:
+    runs-on: ubuntu-latest
+    steps:
+      - name: PR description checker
+        uses: jadrol/pr-description-checker-action@v1.0.0
+        with:
+          repo-token: ${{ secrets.PR_CHECKER_TOKEN }}
+          # PR labels that should be skipped, comma separated
+          #exempt-labels: # optional, default is 
+          # Path to PR template if custom
+          #template-path: # optional, default is ./.github/PULL_REQUEST_TEMPLATE.md
+          # Whether to add comment to PR
+          #comment: # optional, default is true
+          # Comment to use when empty description
+          comment-empty-description: "Please restore the PR description template and fill the sections!"
+          # Comment to use when template not filled in
+          comment-template-not-filled: "Please restore the PR description template and fill the sections!"
+          # Github token to use while creating comment
+          #comment-github-token: # optional, default is 
+          
