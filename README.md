@@ -1,6 +1,5 @@
 # test repository
 
 using target
-
-boil down permissions #2
-foo
+boil down permissions.
+foobar
